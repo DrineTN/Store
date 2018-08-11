@@ -1,0 +1,62 @@
+<nav class="uk-navbar-container" uk-navbar>
+    <div class="uk-navbar-left">
+       <ul class="uk-navbar-nav">
+          <li class="uk-active"><a href="#">Sports Store</a></li>
+          <li>
+       </ul>
+    </div>
+ </nav>
+ <table class="uk-table uk-table-hover uk-table-divider">
+    <thead>
+       <tr>
+          <th>Quantity</th>
+          <th>Product</th>
+          <th class="text-xs-right">Price</th>
+          <th class="text-xs-right">Subtotal</th>
+       </tr>
+    </thead>
+    <tbody>
+       <tr *ngIf="cart.lines.length == 0">
+          <td colspan="4" class="text-xs-center">
+             Your cart is empty
+          </td>
+       </tr>
+       <tr *ngFor="let line of cart.lines">
+          <td>
+             <input type="number" class="uk-input"
+             style="width:5em"
+             [value]="line.quantity"
+             (change)="cart.updateQuantity(line.product,
+             $event.target.value)"/>
+          </td>
+          <td>{{line.product.name}}</td>
+          <td class="text-xs-right">
+             {{line.product.price | currency:"USD":true:"2.2-2"}}
+          </td>
+          <td class="text-xs-right">
+             {{(line.lineTotal) | currency:"USD":true:"2.2-2" }}
+          </td>
+          <td class="text-xs-center">
+             <button class="uk-button uk-button-danger"
+                (click)="cart.removeLine(line.product.id)">
+             Remove
+             </button>
+          </td>
+       </tr>
+    </tbody>
+    <tfoot>
+       <tr>
+          <td colspan="3" class="text-xs-right">Total:</td>
+          <td class="text-xs-right">
+             {{cart.cartPrice | currency:"USD":true:"2.2-2"}}
+          </td>
+       </tr>
+    </tfoot>
+ </table>
+ <div class="text-xs-center">
+    <button class="uk-button uk-button-default" routerLink="/store">Continue Shopping</button>
+    <button class="uk-button uk-button-default" routerLink="/checkout"
+       [disabled]="cart.lines.length == 0">
+    Checkout
+    </button>
+ </div>

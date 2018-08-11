@@ -1,0 +1,18 @@
+<nav class="uk-navbar-container" uk-navbar>
+    <div class="uk-navbar-left">
+        <ul class="uk-navbar-nav">
+            <li class="uk-active"><a href="#">Sports Store</a></li>
+            <li>
+        </ul>
+    </div>
+</nav>
+<div class="uk-margin ">
+  <button class="uk-margin-left uk-button uk-button-default" routerLink="/admin/main/products"
+  routerLinkActive="active">Products</button>
+  <button class="uk-button uk-button-default" routerLink="/admin/main/orders"
+          routerLinkActive="active">Orders</button>
+  <button class="uk-button uk-button-danger" (click)="logout()">Log Out</button>
+</div>
+<div class="uk-margin">
+  <router-outlet></router-outlet>
+</div>

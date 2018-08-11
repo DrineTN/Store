@@ -1,0 +1,53 @@
+<nav class="uk-navbar-container" uk-navbar>
+    <div class="uk-navbar-left">
+        <ul class="uk-navbar-nav">
+            <li class="uk-active"><a href="#">Sports Store</a></li>
+            <li>
+        </ul>
+    </div>
+    <div class="uk-navbar-right">
+        <app-carte-summary></app-carte-summary>
+    </div>
+</nav>
+<div class="clearfix">
+    <div class="box" >
+        <button class="uk-button uk-button-default" (click)="changeCategory()">Home</button>
+        <button class="uk-button uk-button-primary uk-margin-right" *ngFor="let item of this.categories"
+        [class.active]="item == selectedCategory" (click)="changeCategory(item)">{{ item }}</button>
+        <button class="uk-button uk-button-danger" routerLink="/admin">Admin</button>
+    </div>
+    <div class="box-pr">
+        <div class="uk-card uk-card-default uk-card-body" *ngFor="let product of this.products">
+          <div class="uk-column-1-2">
+              <h3 class="uk-card-title"> {{ product.name }}</h3>
+              <span class="uk-badge uk-float-right">{{ product.price | currency:"USD":true:"2.2-2" }} </span>
+          </div>
+
+               <p>This is {{product.description}}</p>
+                <div class="uk-float-right">
+               <button class="uk-button uk-button-primary" (click)="addProductToCart(product)">
+                add to cart
+               </button>
+            </div>
+            </div>
+    </div>
+</div>
+<div class="clearfix">
+<div class="uk-margin box">
+    <div class="uk-form-controls">
+        <select class="uk-select" id="form-horizontal-select"
+        [value]="productsPerPage" (change)="changePageSize($event.target.value)">
+            <option value="3">3 per page</option>
+            <option value="4">4 per page</option>
+            <option value="6">6 per page</option>
+            <option value="8">8 per page</option>
+        </select>
+    </div>
+</div>
+<div class="box">
+    <button *ngFor="let page of this.pageNumbers" (click)="changePage(page)"
+    class="uk-button uk-button-default" [class.active]="page == selectedPage">
+    {{ page }}
+    </button>
+</div>
+</div>

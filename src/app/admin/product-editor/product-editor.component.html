@@ -1,0 +1,29 @@
+<div>
+  <h5>
+    {{ editing  ? 'Edit' : 'Create' }} Product
+  </h5>
+</div>
+<form novalidate #form="ngForm" (ngSubmit)="save(form)">
+  <div class="uk-button">
+    <label>Name</label>
+    <input type="text" name="name" [(ngModel)]="product.name" />
+  </div>
+  <div class="uk-button">
+    <label>Category</label>
+    <input type="text" name="category" [(ngModel)]="product.category" />
+  </div>
+  <div class="uk-button">
+    <label>Description</label>
+    <textarea name="description" [(ngModel)]="product.description"></textarea>
+  </div>
+  <div class="uk-button">
+    <label>Price</label>
+    <input type="text" name="price" [(ngModel)]="product.price" />
+  </div>
+  <button class="uk-button uk-button-default" type="submit">
+    {{ editing ? "Save" : "Create" }}
+  </button>
+  <button class="uk-button uk-button-default" routerLink="/admin/main/products">
+    Cancel
+  </button>
+</form>

@@ -1,0 +1,54 @@
+<nav class="uk-navbar-container" uk-navbar>
+    <div class="uk-navbar-left">
+       <ul class="uk-navbar-nav">
+          <li class="uk-active"><a href="#">Sports Store</a></li>
+          <li>
+       </ul>
+    </div>
+ </nav>
+ <div *ngIf="orderSent" class="uk-card uk-card-default uk-card-small">
+   <h2 class="uk-text-center">Thanks!</h2>
+   <p class="uk-text-center">Thnaks for placing your order</p>
+   <p class="uk-text-center">We'll ship your goods as soon as possible</p>
+   <p class="uk-text-center"><button routerLink="/store" 
+    class="uk-button uk-button-default">Return to store</button></p>
+ </div>
+ <form *ngIf="!orderSent" #form="ngForm" novalidate
+ (ngSubmit)="submitOrder(form)">
+    <fieldset>
+      <div class="uk-margin">
+        <label for="name">Name</label>
+        <input class="uk-input" type="text" #name="ngModel" [(ngModel)]="order.name" name="name" required placeholder="Name">
+        <span *ngIf="submitted && name.invalid" class="uk-text-danger">Please enter your name</span>
+      </div>
+      <div class="uk-margin">
+          <label for="adress">Adress</label>
+          <input class="uk-input" type="text" #address="ngModel" [(ngModel)]="order.address" name="address" required placeholder="Adresse">
+          <span *ngIf="submitted && address.invalid" class="uk-text-danger">Please enter your adress</span>
+        </div>
+        <div class="uk-margin">
+            <label for="City">City</label>
+            <input class="uk-input" type="text" #city="ngModel" [(ngModel)]="order.city" name="city" required placeholder="city">
+            <span *ngIf="submitted && city.invalid" class="uk-text-danger">Please enter your City</span>
+          </div>
+          <div class="uk-margin">
+              <label for="states">States</label>
+              <input class="uk-input" type="text" #state="ngModel" [(ngModel)]="order.state" name="state" required placeholder="state">
+              <span *ngIf="submitted && state.invalid" class="uk-text-danger">Please enter your State</span>
+            </div>
+            <div class="uk-margin">
+                <label for="zip">Code Postal</label>
+                <input class="uk-input" type="text" #zip="ngModel" [(ngModel)]="order.zip" name="zip" required placeholder="Zip">
+                <span *ngIf="submitted && zip.invalid" class="uk-text-danger">Please enter your Zip/Code Postal</span>
+              </div>
+              <div class="uk-margin">
+                  <label for="zip">Contry</label>
+                  <input class="uk-input" type="text" #country="ngModel" [(ngModel)]="order.country" name="country" required placeholder="country">
+                  <span *ngIf="submitted && country.invalid" class="uk-text-danger">Please enter your Contry</span>
+                </div>
+                <div class="uk-text-center">
+                  <button class="uk-button uk-button-default" routerLink="/store">Back</button>
+                  <button class="uk-button uk-button-default" type="submit">Complete Order</button>
+                </div>
+        </fieldset>
+  </form>

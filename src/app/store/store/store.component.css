@@ -1,0 +1,19 @@
+* {
+    box-sizing: border-box;
+}
+
+.box {
+    float: left;
+    width: 50%;
+    padding: 50px;
+}
+.box-pr{
+    float: left;
+    width: 60%;
+    padding: 50px;
+}
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}

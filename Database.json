@@ -1,0 +1,138 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Kayak",
+      "category": "Watersports",
+      "description": "A boat for one person",
+      "price": 275
+    },
+    {
+      "id": 2,
+      "name": "Lifejacket",
+      "category": "Watersports",
+      "description": "Protective and fashionable",
+      "price": 48.95
+    },
+    {
+      "id": 3,
+      "name": "Soccer Ball",
+      "category": "Soccer",
+      "description": "FIFA-approved size and weight",
+      "price": 19.5
+    },
+    {
+      "id": 4,
+      "name": "Corner Flags",
+      "category": "Soccer",
+      "description": "Give your playing field a professional touch",
+      "price": 34.95
+    }
+  ],
+  "orders": [
+    {
+      "cart": {
+        "lines": [
+          {
+            "product": {
+              "id": 1,
+              "name": "Kayak",
+              "category": "Watersports",
+              "description": "A boat for one person",
+              "price": 275
+            },
+            "quantity": 1
+          }
+        ],
+        "itemCount": 1,
+        "cartPrice": 275
+      },
+      "shipped": false,
+      "name": "qs",
+      "address": "qs",
+      "city": "sqs",
+      "state": "qs",
+      "zip": "qs",
+      "country": "qs",
+      "id": 1
+    },
+    {
+      "cart": {
+        "lines": [
+          {
+            "product": {
+              "id": 1,
+              "name": "Kayak",
+              "category": "Watersports",
+              "description": "A boat for one person",
+              "price": 275
+            },
+            "quantity": 1
+          }
+        ],
+        "itemCount": 1,
+        "cartPrice": 275
+      },
+      "shipped": false,
+      "name": "drine",
+      "address": "sfax",
+      "city": "sfax",
+      "state": "sfax",
+      "zip": "4300",
+      "country": "Tun",
+      "id": 2
+    },
+    {
+      "cart": {
+        "lines": [
+          {
+            "product": {
+              "id": 3,
+              "name": "Soccer Ball",
+              "category": "Soccer",
+              "description": "FIFA-approved size and weight",
+              "price": 19.5
+            },
+            "quantity": 1
+          }
+        ],
+        "itemCount": 1,
+        "cartPrice": 19.5
+      },
+      "shipped": false,
+      "name": "drine",
+      "address": "sfax",
+      "city": "sfax",
+      "state": "sfax",
+      "zip": "4300",
+      "country": "Tunisa",
+      "id": 3
+    },
+    {
+      "cart": {
+        "lines": [
+          {
+            "product": {
+              "id": 1,
+              "name": "Kayak",
+              "category": "Watersports",
+              "description": "A boat for one person",
+              "price": 275
+            },
+            "quantity": 1
+          }
+        ],
+        "itemCount": 1,
+        "cartPrice": 275
+      },
+      "shipped": false,
+      "name": "sd",
+      "address": "sds",
+      "city": "sdsd",
+      "state": "sdsd",
+      "zip": "45",
+      "country": "sds",
+      "id": 4
+    }
+  ]
+}

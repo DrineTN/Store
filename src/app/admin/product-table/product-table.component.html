@@ -1,0 +1,24 @@
+<table class="uk-table">
+  <thead>
+  <tr>
+    <th>ID</th>
+    <th>Name</th>
+    <th>Category</th>
+    <th>Price</th>
+    <th></th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let p of getProducts()">
+    <td>{{p.id}}</td>
+    <td>{{p.name}}</td>
+    <td>{{p.category}}</td>
+    <td>{{p.price | currency: "USD": true:"2.2-2"}}</td>
+    <td>
+      <button class="uk-button uk-button-danger" [routerLink]="['/admin/main/products/edit', p.id]">Edit</button>
+      <button class="uk-button uk-button-danger" (click)="deleteProduct(p.id)">Delete</button>
+    </td>
+  </tr>
+  </tbody>
+</table>
+<button class="uk-button uk-button-secondary" routerLink="/admin/main/products/create">Create New Product</button>
